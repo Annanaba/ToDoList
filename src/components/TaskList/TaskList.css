@@ -25,6 +25,9 @@
 	transform: rotate(90deg);
 }
 
+.Checbox {
+	display: flex;
+}
 .toggle-all + label:before {
 	content: '❯';
 	font-size: 22px;
@@ -146,6 +149,7 @@
 
 .todo-list li .icon-destroy {
 	right: 10px;
+	bottom:2px
 }
 
 .todo-list li .icon-destroy:after {

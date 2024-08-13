@@ -2,11 +2,11 @@ import React from "react";
 import './Footer.css'
 import Filters from "../Filters/TaskFilter";
 
-const Footer = () => {
+const Footer = ({setFilter}) => {
     return (
         <footer className="footer">
             <span className="todo-count">1 items left</span>
-            <Filters />
+            <Filters  setFilter = {setFilter}/>
             <button className="clear-completed">Clear completed</button>
         </footer>
     );
