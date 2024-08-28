@@ -74,12 +74,16 @@
 .todo-list li .toggle {
 	text-align: center;
 	width: 40px;
+	height: 40px;
+	left:-1px;
+	bottom: 5px;
 	/* auto, since non-WebKit browsers doesn't support input styling */
-	height: auto;
+	/* height: auto;
 	position: absolute;
 	top: 0;
-	bottom: 0;
-	margin: auto 0;
+	bottom: 0; */
+	position: absolute;
+	/* margin: auto 0; */
 	border: none; /* Mobile Safari */
 	-webkit-appearance: none;
 	appearance: none;

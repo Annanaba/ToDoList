@@ -1,51 +1,37 @@
-import React,{useState} from "react";
-import Task from "../Task";
-import Footer from "../Footer/Footer";
-import '../TaskList/TaskList.css';
+import React from 'react';
+import propTypes from "prop-types";
+import Task from '../Task';
+import './TaskList.css';
 
-
-const TaskList = () => {
-
-    let initialTask = [
-        { id: 1, title: 'Completed task', status: 'completed', created: 'created 17 seconds ago', isDan: true },
-        { id: 2, title: 'Editing task', status: 'active', created: 'created 5 minutes ago',isDan: false },
-        { id: 3, title: 'Active task', status: 'active', created: 'created 5 minutes ago',isDan: false  },
-      ]; 
-
-    //   let arr = useState(initialTask);
-    //   let tasks = arr[0];
-    //   let setTasks = arr[1];
-
-      let [tasks, setTasks] = useState(initialTask);
-      let [filter, setFilter] = useState('active')
-
-
-      function removeTask(id) {
-        let filterTask = tasks.filter((t) => t.id !== id )
-        setTasks(filterTask);
-      }
-
-      let tasksFortodolist = tasks;
-      if(filter === "completed"){
-        tasksFortodolist = tasks.filter( t => t.isDan === true);
-      }
-      if(filter === "active"){
-        tasksFortodolist = tasks.filter( t => t.isDan === false);
-      }
-      
-
-
-      
+const TaskList = ({ tasks, removeTask, toggleTaskCompletion, updateTaskTitle}) => {
     return (
-        <div>
         <ul className="todo-list">
-            {tasksFortodolist.map(task => (
-                <Task key={task.id} task={task} removeTask={removeTask}  />
-            )) }
+            {tasks.map(task => (
+                <Task 
+                key={task.id} 
+                task={task} 
+                removeTask={removeTask}  
+                toggleTaskCompletion={toggleTaskCompletion} 
+                updateTaskTitle={updateTaskTitle}/>
+            ))}
         </ul>
-        <Footer setFilter={setFilter} />
-        </div>
     );
 };
+
+
+TaskList.propTypes = {
+    tasks: propTypes.arrayOf(
+        propTypes.shape({
+            id: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
+            title: propTypes.string.isRequired,
+            isDan: propTypes.bool.isRequired,
+            created: propTypes.oneOfType([propTypes.string, propTypes.instanceOf(Date)])
+        })
+    ).isRequired,
+    toggleTaskCompletion: propTypes.func.isRequired,
+    removeTask: propTypes.func.isRequired,
+    updateTaskTitle: propTypes.func.isRequired
+};
+
 
 export default TaskList;
