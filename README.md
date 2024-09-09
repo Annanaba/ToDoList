@@ -4,4 +4,4 @@
 
 ## Развернутое приложение
 
-Приложение доступно по следующей ссылке: [TODO App](https://todo-hrr9mkwd2-annas-projects-6913df6a.vercel.app)
+Приложение доступно по следующей ссылке: [TODO App](https://todo-nine-nu-14.vercel.app)
