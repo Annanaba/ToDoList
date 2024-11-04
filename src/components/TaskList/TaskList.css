@@ -120,7 +120,7 @@
 	color: gray;
 }
 
-.todo-list li label .description {
+.todo-list li label .title {
 	word-break: break-all;
 	display: block;
 	line-height: 1.2;
@@ -129,7 +129,7 @@
 	color: #4d4d4d;
 }
 
-.todo-list li.completed label .description {
+.todo-list li.completed label .title {
 	color: #cdcdcd;
 	text-decoration: line-through;
 }

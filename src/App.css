@@ -43,3 +43,42 @@ body {
 	border-top: 1px solid #e6e6e6;
 }
 
+.todo-list li .icon-pause,
+.todo-list li .icon-play {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+    color: #cc9a9a;
+	transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+
+.todo-list li .icon-play {
+	font-size: 15px;
+}
+
+.icon-pause:after {
+	content: '⏸';
+}
+
+.icon-play:after {
+	content: '▶';
+}
+
+.description {
+display: flex;
+width: 60%;
+justify-content: space-between;
+}
+
+.timer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.completed .time-text {
+    text-decoration: line-through;
+}
+
+
