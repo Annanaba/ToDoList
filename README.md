@@ -4,4 +4,4 @@
 
 ## Развернутое приложение
 
-Приложение доступно по следующей ссылке: [TODO App](https://todo-nine-nu-14.vercel.app)
+Приложение доступно по следующей ссылке: [TODO App](https://to-do-list-peach-psi.vercel.app/)
